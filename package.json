@@ -2,12 +2,13 @@
   "name": "dropbox-image-uploader",
   "displayName": "Dropbox Image Uploader",
   "description": "Upload images to Dropbox and insert shared links into Markdown files",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "minyeamer",
   "repository": {
     "type": "git",
     "url": "https://github.com/minyeamer/dropbox-image-uploader.git"
   },
+  "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.75.0"
   },

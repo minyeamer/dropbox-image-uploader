@@ -2,18 +2,14 @@
 node_modules
 
 # Build artifacts
-dist
+dist/
+images/
 *.vsix
 
 # Testing
 .vscode-test/
 
-# Logs
-*.log
-
-# System files
+# Temp files
 .DS_Store
-
-# Project-specific
-images/
+*.log
 temp/
