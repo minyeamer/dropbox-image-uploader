@@ -1,0 +1,103 @@
+{
+  "name": "dropbox-image-uploader",
+  "displayName": "Dropbox Image Uploader",
+  "description": "Upload images to Dropbox and insert shared links into Markdown files",
+  "version": "0.0.2",
+  "publisher": "minyeamer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/minyeamer/dropbox-image-uploader.git"
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "dropboxImageUploader.uploadImage",
+        "title": "Upload Image to Dropbox",
+        "category": "Dropbox"
+      },
+      {
+        "command": "dropboxImageUploader.pasteImage",
+        "title": "Paste Image from Clipboard to Dropbox",
+        "category": "Dropbox"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "dropboxImageUploader.uploadImage",
+        "key": "ctrl+alt+u",
+        "mac": "cmd+alt+u",
+        "when": "editorTextFocus && editorLangId == markdown"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "dropboxImageUploader.uploadImage",
+          "when": "editorLangId == markdown",
+          "group": "9_cutcopypaste"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Dropbox Image Uploader",
+      "properties": {
+        "dropboxImageUploader.accessToken": {
+          "type": "string",
+          "default": "",
+          "description": "Dropbox App Console > OAuth 2 > Generated access token"
+        },
+        "dropboxImageUploader.useCustomPath": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to use a custom upload path (if disabled, defaults to /apps/)"
+        },
+        "dropboxImageUploader.uploadPath": {
+          "type": "string",
+          "default": "/apps",
+          "description": "Dropbox upload path (e.g. /apps/my-folder or /images). Only applied when 'Use Custom Path' is enabled."
+        },
+        "dropboxImageUploader.imageFormat": {
+          "type": "string",
+          "default": "",
+          "description": "Image conversion format (e.g. webp, jpg, png). Leave empty to keep the original format. Requires ffmpeg.",
+          "enum": [
+            "",
+            "webp",
+            "jpg",
+            "png"
+          ]
+        },
+        "dropboxImageUploader.maxImageSize": {
+          "type": "number",
+          "default": 0,
+          "description": "Maximum image dimension (width or height, in pixels). Set to 0 to disable resizing. Requires ffmpeg.",
+          "minimum": 0
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./tsconfig.json",
+    "watch": "tsc -watch -p ./tsconfig.json",
+    "pretest": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.75.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "dropbox": "^10.34.0"
+  }
+}

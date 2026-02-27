@@ -1,0 +1,19 @@
+# Dependencies
+node_modules
+
+# Build artifacts
+dist
+*.vsix
+
+# Testing
+.vscode-test/
+
+# Logs
+*.log
+
+# System files
+.DS_Store
+
+# Project-specific
+images/
+temp/

@@ -1,0 +1,24 @@
+# Development environment
+.vscode/**
+.vscode-test/**
+
+# Source files (TypeScript)
+src/**
+**/*.ts
+!dist/**/*.js
+**/*.map
+
+# Configuration files
+.gitignore
+.vscodeignore
+tsconfig.json
+.eslintrc.json
+
+# Test files
+**/*.test.*
+**/*.spec.*
+
+# Build artifacts
+build.sh
+*.vsix
+package-lock.json
