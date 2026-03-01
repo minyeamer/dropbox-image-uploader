@@ -1,8 +1,10 @@
 # Dropbox Image Uploader for VS Code
 
-Upload images to Dropbox and automatically insert direct links into your Markdown files — all without leaving VS Code.
+Upload images to Dropbox and automatically insert direct links into your Markdown files.
 
 ## ✨ Features
+
+![preview](https://dl.dropboxusercontent.com/scl/fi/k479on0o4k06rm9824hu1/dropbox-00-preview.gif?rlkey=e68aj559ulf8xudc6b0ko6t5g&raw=1)
 
 - 📤 **Multiple Image Upload**: Upload multiple images at once
 - 🔗 **Auto-Insert Links**: Automatically inserts Markdown image syntax
